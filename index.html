@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Tortuguita</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffe0f0, #fff0f5);
+      font-family: "Segoe UI", Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 500px;
+      position: relative;
+      z-index: 2;
+    }
+    h1 {
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+    .turtle {
+      font-size: 5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .falling {
+      position: absolute;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="turtle">🐢</div>
+    <h1>¿Quieres seguir siendo mi novia<br>hasta que nos casemos, miamorsh? 💍✨</h1>
+  </div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop controls>
+    <source src="una-y-otra-vez.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    // Generar corazones y anillos cayendo
+    const symbols = ["💖","💜","💍"];
+    function createFalling() {
+      const el = document.createElement("div");
+      el.className = "falling";
+      el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.left = Math.random()*100 + "vw";
+      el.style.animationDuration = (3 + Math.random()*5) + "s";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 8000);
+    }
+    setInterval(createFalling, 500);
+  </script>
+</body>
+</html>
