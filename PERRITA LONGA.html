@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi perrito fiel</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #333;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    .escena {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: #d2b48c;
+      overflow: hidden;
+    }
+    /* Silueta del perro */
+    .perro {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 120px;
+    }
+    .cuerpo {
+      position: absolute;
+      width: 120px;
+      height: 70px;
+      background: #333;
+      border-radius: 50px;
+      left: 40px;
+      top: 30px;
+    }
+    .cabeza {
+      position: absolute;
+      width: 60px;
+      height: 50px;
+      background: #333;
+      border-radius: 50%;
+      left: -20px;
+      top: 20px;
+    }
+    .oreja {
+      position: absolute;
+      width: 20px;
+      height: 30px;
+      background: #222;
+      border-radius: 10px;
+      top: -10px;
+      left: 5px;
+    }
+    .cola {
+      position: absolute;
+      width: 40px;
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      right: -20px;
+      top: 40px;
+      transform: rotate(30deg);
+      animation: moverCola 1s infinite alternate;
+    }
+    @keyframes moverCola {
+      from { transform: rotate(30deg); }
+      to { transform: rotate(-30deg); }
+    }
+    /* Texto */
+    .mensaje {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Para ti 🐾</h1>
+  <div class="escena">
+    <div class="perro">
+      <div class="cuerpo"></div>
+      <div class="cabeza">
+        <div class="oreja"></div>
+      </div>
+      <div class="cola"></div>
+    </div>
+  </div>
+  <div class="mensaje">
+    PERRA LONGA SUCIA SUCITA
+  </div>
+</body>
+</html>
